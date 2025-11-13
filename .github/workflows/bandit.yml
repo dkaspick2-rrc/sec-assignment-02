@@ -2,7 +2,8 @@
 name: Bandit
 
 on:
-  pull_request:
+  push: null
+  pull_request: null
 
 jobs:
   analyze:
@@ -10,9 +11,6 @@ jobs:
     permissions:
       # required for all workflows
       security-events: write
-      # only required for workflows in private repositories
-      actions: read
-      contents: read
     steps:
       - name: Perform Bandit Analysis
         uses: PyCQA/bandit-action@v1
